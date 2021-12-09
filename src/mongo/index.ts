@@ -1,5 +1,6 @@
 import { MongoClient, Collection, DbCollectionOptions } from 'mongodb';
 import config from './../config';
+import { AsyncHook } from 'async_hooks';
 
 let conn;
 async function getConn() : Promise<MongoClient> {

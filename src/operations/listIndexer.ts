@@ -51,9 +51,9 @@ function shuffleArr(array) : Array<any> {
 async function index(servers : Array<IndexedServer>, type) : Promise<void> {
     try {
         const pageSize = {
-			premium: 3,
-			featured: 4,
-			regular: 12,
+			premium: 5,
+			featured: 5,
+			regular: 20,
         };
 
         const collname = `serverlist_live_${type}`;
@@ -71,7 +71,6 @@ async function index(servers : Array<IndexedServer>, type) : Promise<void> {
 
         let spliceResult;
         const pages = [];
-        const itemCount = servers.length;
 
         while((spliceResult = servers.splice(0, pageSize[type])).length !== 0) {
             pages.push(spliceResult);
@@ -80,7 +79,7 @@ async function index(servers : Array<IndexedServer>, type) : Promise<void> {
         const list : IndexedServerList = {
             createdAt: new Date(),
             validUntil: new Date(),
-            itemCount,
+            itemCount: servers.length,
             weightSum: 0,
             pageCount: pages.length,
             pages,

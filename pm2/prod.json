@@ -13,7 +13,7 @@
 			"user": "rnet",
 			"host": "192.168.137.30",
 			"ref": "origin/master",
-			"repo": "-b master https://github.com/ReadOnlyNet/caesar.git",
+			"repo": "-b master https://github.com/ReadOnlyNet/vespasian.git",
 			"path": "/home/rnet/deploy/prod/",
 			"pre-setup": "rm -rf /home/rnet/deploy/prod/*",
 			"post-deploy": "yarn && yarn build && cp -f /home/rnet/vespasian-prod/config/config.yml ./config/config.yml && mkdir /home/rnet/vespasian-prod-temp/ && cp -rf /home/rnet/deploy/prod/source/. /home/rnet/vespasian-prod-temp && rm -rf /home/rnet/old.vespasian-prod && mv /home/rnet/vespasian-prod /home/rnet/old.vespasian-prod && mv /home/rnet/vespasian-prod-temp /home/rnet/vespasian-prod && pm2 restart vespasian-prod"

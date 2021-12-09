@@ -1,5 +1,5 @@
 {
-  "name": "server-lister",
+  "name": "@rnet.cf/vespasian",
   "version": "0.1.0",
   "description": "Job that runs periodically to index servers on the server listing",
   "main": "src/index.js",
@@ -9,11 +9,10 @@
     "watch": "tsc -w -p tsconfig.json",
     "lint": "tslint -t stylish --type-check --project \"tsconfig.json\""
   },
-  "author": "Germano Eichenberg",
+  "author": "Germano Eichenberg <gin@rnet.cf>",
   "dependencies": {
-    "envkey": "^1.2.7",
-    "getenv": "^1.0.0",
     "mongodb": "^3.0.5",
+    "node-yaml-config": "^0.0.4",
     "raven": "^2.5.0",
     "winston": "^3.0.0-rc4"
   },
